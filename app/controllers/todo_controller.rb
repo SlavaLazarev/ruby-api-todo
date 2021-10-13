@@ -35,7 +35,7 @@ class TodoController < ApplicationController
       todo = Todo.find_by(id: @todoId)
       if todo.categoryId == @categoryId
         todo.update(isCompleted: !todo.isCompleted)
-        render json: {status: 201, msg: 'The task has been updated!', data: todo}
+        render json: {status: 0, msg: 'The task has been updated!', data: todo}
       end
 
     else
