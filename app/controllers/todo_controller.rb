@@ -29,7 +29,7 @@ class TodoController < ApplicationController
 
   def edit
     @todoId = params[:todoid]
-    @categoryId = params[:categoryid].to_i
+    @categoryId = params[:categoryId].to_i
 
     if Todo.exists?(@todoId)
       todo = Todo.find_by(id: @todoId)
@@ -41,6 +41,5 @@ class TodoController < ApplicationController
     else
       render json: {status: 404, msg: 'The record was not found!'}
     end
- 
   end
 end
