@@ -41,8 +41,6 @@ class TodoController < ApplicationController
     else
       render json: {status: 404, msg: 'The record was not found!'}
     end
-    else
-       render json: {status: 0, msg: 'ёмаё'}
-    end
+ 
   end
 end
