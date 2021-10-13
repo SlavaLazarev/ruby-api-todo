@@ -3,7 +3,7 @@ class TodoController < ApplicationController
     if !params[:text].blank?
       @text = params[:text]
       if !params[:categoryId].blank?
-        @categoryId = params[:categoryId]
+        @categoryId = params[:categoryid]
         if Project.exists?(@categoryId)
           begin
             Todo.create(
