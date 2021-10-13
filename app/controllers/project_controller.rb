@@ -22,4 +22,18 @@ class ProjectController < ApplicationController
     end
     render json: response
   end
+  def new     
+    if !params[:title].blank?
+      @title=params[:title]
+      if !Project.exists?(@title)
+        begin
+          Project.create(title: @title)          
+        rescue 
+          render json: {status: 500, msg: 'Server error'}
+        else
+          render json: {status: 201, msg: 'Success'}
+        end
+      end
+    end
+  end
 end
