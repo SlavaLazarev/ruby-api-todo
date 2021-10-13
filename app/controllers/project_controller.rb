@@ -29,7 +29,7 @@ class ProjectController < ApplicationController
         begin
           Project.create(title: @title)          
         rescue 
-          render json: {status: 0, msg: 'Server error'}
+          render json: {status: 500, msg: 'Server error'}
         else
           render json: {status: 201, msg: 'Success'}
         end
