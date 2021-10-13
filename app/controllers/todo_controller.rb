@@ -29,7 +29,7 @@ class TodoController < ApplicationController
 
   def edit
     @todoId = params[:todoid]
-    @categoryId = params[:categoryId].to_i
+    @categoryId = params[:categoryid].to_i
 
     if Todo.exists?(@todoId)
       todo = Todo.find_by(id: @todoId)
